@@ -67,11 +67,11 @@ export const deleteCursoById = async (req, res) => {
   const { idCurso } = req.params
   const [result] = await pool.query(queriesCursos.deleteCurso, [idCurso])
   try {
-    if (result.affectedRows === 0 || idCurso === undefined) return res.status(404).send({ ok: false, message: 'curso no encontrado' })
+    // if (result.affectedRows === 0 || idCurso === undefined) return res.status(404).send({ ok: false, message: 'curso no encontrado' })
 
-    // result.length <= 0
-    //   ? res.status(404).send({ ok: false, message: 'no hay cursos' })
-    //   : res.status(204)
+    result.length <= 0
+      ? res.status(404).send({ ok: false, message: 'no hay cursos' })
+      : res.status(204)
 
     const [rows] = await pool.query(queriesCursos.getCursos)
     res.status(200).send({ ok: true, message: 'curso eliminado', cursos: rows })

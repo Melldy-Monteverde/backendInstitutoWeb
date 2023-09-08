@@ -1,8 +1,9 @@
 import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
-import v1CursosRouter from './routes/cursosRoutes/cursos.routes.js'
-import v1ResultadoExamenes from './routes/resultadoExamenesRoutes/resultadoExamenes.routes.js'
+import v1CursosRouter from './routes/cursos.routes.js'
+import v1ResultadoExamenes from './routes/resultadoExamenes.routes.js'
+import v1AltaAlumnos from './routes/altaAlumnos.routes.js'
 
 const app = express()
 
@@ -14,6 +15,7 @@ const API_PREFIX = 'api'
 
 app.use(`/${API_PREFIX}/v1/cursos`, v1CursosRouter)
 app.use(`/${API_PREFIX}/v1/resultados`, v1ResultadoExamenes)
+app.use(`/${API_PREFIX}/v1/alumnos`, v1AltaAlumnos)
 
 // rutas no encontradas
 app.use((req, res, next) => {

@@ -1,6 +1,3 @@
-// LA BASE PROD ES: cursos
-// LA BASE VACIA ES: testing2
-
 export const queriesCursos = {
   getCursos: 'SELECT * FROM cursos ORDER BY id;',
 
@@ -8,7 +5,7 @@ export const queriesCursos = {
 
   createCurso: 'INSERT INTO cursos (descripcion, precio_mensual, tipo, categoria) VALUES (?, ?, ?, ?);',
 
-  deleteCurso: 'DELETE FROM testing2 WHERE id = ?;',
+  deleteCurso: 'DELETE FROM cursos WHERE id = ?;',
 
   updateCurso: 'UPDATE cursos SET descripcion = IFNULL(?, descripcion), precio_mensual = IFNULL(?, precio_mensual), tipo = IFNULL(?, tipo), categoria = IFNULL(?, categoria) WHERE id = ?;'
 }
@@ -23,4 +20,16 @@ export const queriesResultadosExamenes = {
   deleteResultadoExamen: 'DELETE FROM resultado_examenes WHERE id = ?;',
 
   updateResultadoExamen: 'UPDATE resultado_examenes SET calificacion = IFNULL(?, calificacion) WHERE id = ?'
+}
+
+export const queriesAltaAlumnos = {
+  getAllAlumnos: 'SELECT * FROM alumnos ORDER BY id_alumno;',
+
+  getAlumnoById: 'SELECT * FROM alumnos WHERE id_alumno = ?;',
+
+  createAlumno: 'INSERT INTO alumnos (fecha_nac, nombre_padre, nombre_madre, tutor, oSoc_prepaga, beca, usuario, clave)  VALUES (?, ?, ?, ?, ?, ?, ?, ?);',
+
+  updateAlumnoById: 'UPDATE alumnos SET fecha_nac = IFNULL(?, fecha_nac), nombre_padre = IFNULL(?, nombre_padre), nombre_madre = IFNULL(?, nombre_madre), tutor = IFNULL(?, tutor), oSoc_prepaga = IFNULL(?, oSoc_prepaga), beca = IFNULL(?, beca), usuario = IFNULL(?, usuario), clave = IFNULL(?, clave) WHERE id_alumno = ?;',
+
+  deleteAlumnoById: 'DELETE FROM alumnos WHERE id_alumno = ?;'
 }

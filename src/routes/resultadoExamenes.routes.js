@@ -5,7 +5,7 @@ import {
   createResultado,
   updateResultadoByExamenId,
   deleteResultadoByExamenId
-} from '../../controllers/resultadoExamenes.controller.js'
+} from '../controllers/resultadoExamenes.controller.js'
 
 const router = Router()
 
